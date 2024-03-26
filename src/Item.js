@@ -17,7 +17,7 @@ export default function Item({ dog, setRenderTrigger, renderTrigger}) {
       <img 
       src={dog.imgUrl} 
       alt={'Picture of a ' + dog.name} 
-      className= {isDetail ? "" : "detailImg"}
+      className= {isDetail ? "detailImg" : ""}
     //   style={{ transition: "transform 0.3s ease", width: "100%", height: "100%" }}
     // onMouseOver={(e) => {
     //   e.target.style.transform = "scale(1.02)";
