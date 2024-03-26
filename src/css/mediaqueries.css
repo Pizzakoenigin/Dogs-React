@@ -1,0 +1,50 @@
+@media (max-width: 1250px) {
+    #main {
+        flex-direction: column; /* verhindert das sticky verhalten */
+        font-size: 0.8em;
+    }
+
+    h1 {
+        padding: 0.2em !important;
+    }
+
+    #filter {
+        width: 80vw;
+    }
+
+    #filterButtons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 5px !important;
+        top: 0 !important;
+        position: sticky;
+
+        label {
+            display: block;
+            margin: 0.2rem 0 !important;
+            padding: 0 !important;
+            color: black !important;
+            background-color: transparent !important;
+        }
+
+    }
+
+    #filterButtons:first-child {
+        display: block;
+        font-size: 1em;
+    }
+
+    #dogList {
+        /* width: 80vw !important; */
+
+        h2 {
+            margin: 0.6rem 0.2rem;
+            font-size: 1.7rem !important;
+        }
+
+        p {
+            margin: 0.2rem;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@import url("./mediaqueries.css");
+@import url("./navbar.css");
+@import url("./multiRangeSlider.css");
+@import url("./doglist.css");
+@import url("./filter.css");
+
+body {
+  --main-color: rgb(207, 237, 179);
+  --border-color: rgb(105, 205, 90);
+  --button-color: rgb(162, 195, 112);
+  --nav-color: rgb(227, 177, 84);
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 0.4rem 0 0 0.2rem;
+}
+
+h3 {
+  margin: 0.3rem;
+  font-size: 1.5rem;
+}
+
+h4 {
+  margin: 0.5rem 0.3rem;
+  font-size: 1rem;
+}
+
+img {
+  height: 60%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+#main {
+  margin: 0 auto;
+  display: flex;
+}
+
+button {
+  text-decoration: none;
+  background-color: var(--button-color);
+  display: inline;
+  border: none;
+  margin: 0;
+  padding: 0.7rem;
+  border-radius: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--nav-color);
+}
+
+#noResults {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+
+  img {
+    width: 50vh
+  }
+
+  button {
+    width: 20%;
+  }
+
+}

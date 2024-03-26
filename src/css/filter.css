@@ -1,0 +1,62 @@
+#filter {
+    margin: 0 auto;
+    flex: 1
+  }
+  
+  #filterButtons {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+    border: 0.1rem solid var(--border-color);
+    position: sticky;
+    top: 2rem;
+    /* height: 100%; */
+    box-shadow: 0px 0px 5px rgb(171, 171, 171);
+    border-radius: 1rem;
+    margin: 2rem auto 5vh auto;
+    padding: 1rem;
+    width: 70%;
+  
+    #furLength {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    #furSurface {
+      display: flex;
+      justify-content: flex-start;
+  
+      label {
+        margin-right: 0.7rem;
+      }
+    }
+  
+    label {
+      text-decoration: none;
+      background-color: var(--button-color);
+      display: inline;
+      border: none;
+      margin: 0 0 1rem 0;
+      padding: 0.7rem;
+      border-radius: 1rem;
+    }
+  
+    #changeFilterButtons button {
+      font-size: 1em;
+    }
+  
+    #searchfield {
+      margin: 0.4rem 0;
+    }
+  }
+  
+  .foldedInFilter {
+    position: fixed;
+    bottom: 2rem;
+    height: 10%;
+    box-shadow: 0px 0px 5px rgb(171, 171, 171);
+    border-radius: 1rem;
+    margin: 2rem auto 5vh 1rem;
+    padding: 0.5rem 1rem;
+  }
