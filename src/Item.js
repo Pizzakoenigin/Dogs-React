@@ -4,7 +4,7 @@ import { useFavourite} from "./useFavourite"
 import {useState, useEffect, useContext }from "react";
 import { ContextDog } from "./Main";
 
-export default function Item({ dog, setRenderTrigger, renderTrigger, showDetail, setShowDetail}) {
+export default function Item({ dog, setRenderTrigger, renderTrigger}) {
   const {isFav, changeFavourite} = useFavourite(false, dog);
   const {isDetail, setIsDetail} = useContext(ContextDog)
 
@@ -45,7 +45,7 @@ export default function Item({ dog, setRenderTrigger, renderTrigger, showDetail,
         {'Origin: ' + dog.origin}
       </p>
 
-      <DetailButton dog = {dog} isDetail = {isDetail}  setIsDetail = {setIsDetail} showDetail = {showDetail } setShowDetail = {setShowDetail}>
+      <DetailButton dog = {dog}>
       
       </DetailButton>
     </li>

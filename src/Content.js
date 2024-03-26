@@ -24,76 +24,96 @@ export default function Content(p) {
   }
   p.Dogs.sort(sortAlphabet);
 
-  p.Dogs.forEach(dog => {
-    // console.log(dog.name);
-    // entscheidung nur Dog oder alle Dogs anzeigen
-    // prüfen ob Hunde vorhanden (main/dog/blabla funktioniert nicht)
-    // check if individual dog site is open 
-    if (decodedDog != '') {
-      if (dog.name != decodedDog) {
+  // hier wird anhand des Statuses entschieden ob ein einzelnes Item oder die ganze Liste gerendet wird
+  if (isDetail) {
+    p.Dogs.forEach(dog => {
+      if (decodedDog != '') {
+        if (dog.name != decodedDog) {
 
+          content.push(
+            <Item
+              dog={dog}
+              key={dog.name}
+              showShort={p.showShort}
+              showMedium={p.showMedium}
+              showLong={p.showLong}
+              filterFav={p.filterFav}
+              setRenderTrigger={setRenderTrigger}
+              renderTrigger={renderTrigger}
+
+            />
+          )
+        }
+      }
+    })
+  } else {
+    p.Dogs.forEach(dog => {
+      // console.log(dog.name);
+      // entscheidung nur Dog oder alle Dogs anzeigen
+      // prüfen ob Hunde vorhanden (main/dog/blabla funktioniert nicht)
+      // check if individual dog site is open 
+
+
+
+
+      dog.fav = localStorage.getItem(`isFavourite_${dog.name}`);
+
+      if (dog.name.toLowerCase().indexOf(p.filterText.toLowerCase()) === -1) {
+        return;
+      }
+
+      if (
+        (!p.showShort && dog.fur_length === "Short") ||
+        (!p.showMedium && dog.fur_length === "Medium") ||
+        (!p.showLong && dog.fur_length === "Long")
+      ) {
+        return;
+      }
+
+      if (
+        (!p.showSmooth && dog.fur_surface === "Smooth") ||
+        (!p.showCurly && dog.fur_surface === "Curly")
+      ) {
+        return;
+      }
+
+      if (p.filterFav && dog.fav === "false") {
         return
       }
-    }
+
+      if (placeholderMin > dog.sizeMin) {
+        return
+      }
+
+      if (placeholderMax < dog.sizeMax) {
+        return
+      }
+
+      // eventuell raus?
 
 
 
-    dog.fav = localStorage.getItem(`isFavourite_${dog.name}`);
 
-    if (dog.name.toLowerCase().indexOf(p.filterText.toLowerCase()) === -1) {
-      return;
-    }
+      content.push(
+        <Item
+          dog={dog}
+          key={dog.name}
+          showShort={p.showShort}
+          showMedium={p.showMedium}
+          showLong={p.showLong}
+          filterFav={p.filterFav}
+          setRenderTrigger={setRenderTrigger}
+          renderTrigger={renderTrigger}
 
-    if (
-      (!p.showShort && dog.fur_length === "Short") ||
-      (!p.showMedium && dog.fur_length === "Medium") ||
-      (!p.showLong && dog.fur_length === "Long")
-    ) {
-      return;
-    }
+        />
+      );
 
-    if (
-      (!p.showSmooth && dog.fur_surface === "Smooth") ||
-      (!p.showCurly && dog.fur_surface === "Curly")
-    ) {
-      return;
-    }
-
-    if (p.filterFav && dog.fav === "false") {
-      return
-    }
-
-    if (placeholderMin > dog.sizeMin) {
-      return
-    }
-
-    if (placeholderMax < dog.sizeMax) {
-      return
-    }
-
-    // eventuell raus?
-    if (p.showDetail && !dog.detail) {
-      return
-    }
+    });
+  }
 
 
 
-    content.push(
-      <Item
-        dog={dog}
-        key={dog.name}
-        showShort={p.showShort}
-        showMedium={p.showMedium}
-        showLong={p.showLong}
-        filterFav={p.filterFav}
-        setRenderTrigger={setRenderTrigger}
-        renderTrigger={renderTrigger}
-        showDetail={p.showDetail}
-        setShowDetail={p.setShowDetail}
-      />
-    );
 
-  });
 
   if (content.length === 0) {
     return <div id="noResults">

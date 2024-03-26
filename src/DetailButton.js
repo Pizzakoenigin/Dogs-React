@@ -1,10 +1,12 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { ContextDog } from "./Main";
+import { click } from "@testing-library/user-event/dist/click";
 
-export default function DetailButton({ dog, isDetail, setIsDetail, showDetail, setShowDetail }) {
+export default function DetailButton({ dog }) {
     const { displayFilter, setDisplayFilter } = useContext(ContextDog)
 
-
+    const {isDetail, setIsDetail} = useContext(ContextDog)
+    const {clickedDog, setClickedDog} = useContext(ContextDog)
 
     // navigation start
     const [currentPage, setCurrentPage] = useState(window.location.pathname);
@@ -29,15 +31,19 @@ export default function DetailButton({ dog, isDetail, setIsDetail, showDetail, s
 
 
     function changeDetail() {
-        if (setIsDetail) {
-            setIsDetail(!isDetail);
-            setShowDetail(!showDetail)
-            dog.detail = !dog.detail
-            setDisplayFilter(!displayFilter)// hier passiert das ausblenden des Filters
+        console.log(clickedDog);
+            console.log(clickedDog, dog.name);
+        	setIsDetail(!isDetail);
+            // console.log(isDetail);
 
-            console.log(isDetail,showDetail,dog.detail,displayFilter);
+            setClickedDog('Test');
+            console.log(clickedDog);
+
+            // hier passiert das ausblenden des Filters
+
+            // console.log(isDetail,showDetail,dog.detail,displayFilter);
             // true false true true
-        }
+
     }
 
     return (
@@ -60,9 +66,9 @@ export default function DetailButton({ dog, isDetail, setIsDetail, showDetail, s
             onMouseOut={(e) => {
                 e.target.style.transform = "scale(1)";
             }}>
-            {isDetail ? "🔎 Show Details" : "back to overview"}
+            {isDetail ? "back to overview" : "🔎 Show Details"}
 
-            {currentPage === '/main/' + dog.name}
+            {/* {currentPage === '/main/' + dog.name} */}
         </button>
     )
 }

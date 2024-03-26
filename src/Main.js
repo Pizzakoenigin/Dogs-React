@@ -12,12 +12,14 @@ export default function Main({Dog=''}) {
   const [showSmooth, setshowSmooth] = useState(true);
   const [showCurly, setshowCurly] = useState(true)
   const [filterFav, setfilterFav] = useState(false)
-  const [showDetail, setShowDetail] = useState(false)
+  
   const [filterText, setfilterText] = useState('')
   const [placeholderMin, setPlaceholderMin] = useState(10)
   const [placeholderMax, setPlaceholderMax] = useState(100)
   const [displayFilter, setDisplayFilter] = useState(true)
-  const [isDetail, setIsDetail] = useState(true)
+
+  const [clickedDog, setClickedDog] = useState('')
+  const [isDetail, setIsDetail] = useState(false)
 
   function resetStatus() {
     setshowShort(true);
@@ -26,11 +28,13 @@ export default function Main({Dog=''}) {
     setshowSmooth(true);
     setshowCurly(true);
     setfilterFav(false);
-    setShowDetail(false)
+
     setfilterText('');
     setPlaceholderMin(10);
     setPlaceholderMax(100);
-    setIsDetail(true)
+
+    setClickedDog('')
+    setIsDetail(false)
   }
 
   // hier reset des detailstatus wenn die hunde detail seite neugeladen wird
@@ -48,7 +52,7 @@ export default function Main({Dog=''}) {
 
   return (
     <>
-      <ContextDog.Provider value={{ displayFilter, setDisplayFilter, placeholderMin, setPlaceholderMin, placeholderMax, setPlaceholderMax, isDetail, setIsDetail }}> {/*// auf entsprechende statuse anwenden*/}
+      <ContextDog.Provider value={{ displayFilter, setDisplayFilter, placeholderMin, setPlaceholderMin, placeholderMax, setPlaceholderMax, isDetail, setIsDetail, clickedDog, setClickedDog}}> {/*// auf entsprechende statuse anwenden*/}
         <div id='main'>
           <Filter
             showShort={showShort}
@@ -81,7 +85,7 @@ export default function Main({Dog=''}) {
               showSmooth={showSmooth}
               showCurly={showCurly}
               filterFav={filterFav}
-              showDetail={showDetail}
+
               setshowCurly={setshowCurly}
               setshowSmooth={setshowSmooth}
               setshowLong={setshowLong}
@@ -90,7 +94,7 @@ export default function Main({Dog=''}) {
               setfilterFav={setfilterFav}
               setfilterText={setfilterText}
               resetStatus={resetStatus}
-              setShowDetail={setShowDetail}
+
             />
           </div>
         </div>
