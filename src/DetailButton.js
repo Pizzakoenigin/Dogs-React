@@ -30,11 +30,9 @@ export default function DetailButton({ dog }) {
         <>
             <button
                 onClick={() => {
-
                     setDogNameOfDetailPage(dog.name);
                     navigateTo('/main/dog/' + dog.name)
                     setDisplayFilter(false)
-
                 }}
                 className="detailButton"
                 style={{ transition: "transform 0.3s ease", 
@@ -52,7 +50,6 @@ export default function DetailButton({ dog }) {
                 onClick={() => {
                     navigateTo('/main');
                     setDogNameOfDetailPage('')
-                    // localStorage.setItem('dogName', '')
                 }}
                 style={{display: dogNameOfDetailPage === '' ? 'none' : 'inline' }}
                 >

@@ -105,7 +105,7 @@ export default function Content(p) {
 
   if (content.length === 0) {
     return <div id="noResults">
-      <img src="https://http.dog/204.jpg"></img>
+      <img src="https://http.dog/404.jpg"></img>
       <p>
         No dog matches your filters.
       </p>

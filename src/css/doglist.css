@@ -48,6 +48,7 @@
   .detailLiElement {
     height: fit-content;
     width: 40vw;
+    margin: 0 auto;
   }
 
   .detailImg {

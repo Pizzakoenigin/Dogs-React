@@ -30,9 +30,7 @@ export default function Navigation() {
     }, []);
 
     useEffect(() => {
-        console.log('page changed');
         if (currentPage.includes('main/dog/')) {
-            console.log('main/dog/included');
             setDogNameOfDetailPage(getDogName(currentPage))
         }
     }, [currentPage])
@@ -44,9 +42,7 @@ export default function Navigation() {
 
     function linkToSites() {
         if (currentPage.includes('main/dog/')) {
-            console.log('dogNameOfDetailPage' + dogNameOfDetailPage);
             let decodedDog = decodeURIComponent(dogNameOfDetailPage)
-            console.log('decodedDog' + decodedDog);
             return (
                 <Main Dog={decodedDog} />
             )
