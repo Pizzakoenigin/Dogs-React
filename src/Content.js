@@ -31,7 +31,7 @@ export default function Content(p) {
   if (dogNameOfDetailPage != '') {
     p.Dogs.forEach(dog => {
 
-      if (dog.name != dogNameOfDetailPage) {
+      if (dog.name != p.Dog) {
         return
 
       } else {

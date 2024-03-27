@@ -7,25 +7,35 @@ export const ContextDog = createContext()
 
 export default function Navigation() {
     const [currentPage, setCurrentPage] = useState(window.location.pathname);
+    const [dogNameOfDetailPage, setDogNameOfDetailPage] = useState('')
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const dogNameFromURL = urlParams.get('dogName');
-    if (dogNameFromURL) {
-        console.log('there is an URL');
-        let capitalizedDogNameFromURL = dogNameFromURL.charAt(0).toUpperCase()+dogNameFromURL.slice(1);
-        
-        console.log(capitalizedDogNameFromURL);
-        localStorage.setItem('dogName', capitalizedDogNameFromURL);
+    function getDogName(link) {
+        const searchTerm = 'main/dog/';
+        const indexOfFirst = link.indexOf(searchTerm);
+        if (indexOfFirst !== -1) {
+            let dogName = link.substring(indexOfFirst + searchTerm.length);
+            return dogName;
+        }
+        return null;
     }
 
+    useEffect(() => {
+        const handlePopState = (e) => {
+            setCurrentPage(window.location.pathname);
+        };
+        window.addEventListener('popstate', handlePopState);
+        return () => {
+            window.removeEventListener('popstate', handlePopState);
+        };
+    }, []);
 
-    const [dogNameOfDetailPage, setDogNameOfDetailPage] = useState(() => {
-        const storedDogName = localStorage.getItem('dogName');
-        return storedDogName || '';
-    });
-    console.log(dogNameOfDetailPage);
-
-// hundename aus link extrahieren ohne local storage zu nutzen
+    useEffect(() => {
+        console.log('page changed');
+        if (currentPage.includes('main/dog/')) {
+            console.log('main/dog/included');
+            setDogNameOfDetailPage(getDogName(currentPage))
+        }
+    }, [currentPage])
 
     function navigateTo(page) {
         window.history.pushState({}, '', page);
@@ -34,15 +44,14 @@ export default function Navigation() {
 
     function linkToSites() {
         if (currentPage.includes('main/dog/')) {
-            // let dogName = getDogName(currentPage);
-            // console.log('dogName called');  
+            console.log('dogNameOfDetailPage' + dogNameOfDetailPage);
+            let decodedDog = decodeURIComponent(dogNameOfDetailPage)
+            console.log('decodedDog' + decodedDog);
             return (
-                <Main Dog={dogNameOfDetailPage} />
+                <Main Dog={decodedDog} />
             )
         }
         if (currentPage === '/main') {
-            // setDogNameOfDetailPage('')
-            // localStorage.setItem('dogName', '')
             return (
 
                 <Main></Main>
@@ -54,24 +63,12 @@ export default function Navigation() {
             )
     }
 
-    useEffect(() => {
-        const handlePopState = (e) => {
-            setCurrentPage(window.location.pathname);
-        };
-        window.addEventListener('popstate', handlePopState);
-        return () => {
-            window.removeEventListener('popstate', handlePopState);
-        };
-
-
-    }, []);
-
     return (
         <>
-            <ContextDog.Provider value={{ dogNameOfDetailPage, setDogNameOfDetailPage }}>
+            <ContextDog.Provider value={{ dogNameOfDetailPage, setDogNameOfDetailPage, currentPage, setCurrentPage }}>
                 <Header />
                 <div>
-                    <nav id='navBar'>
+                    {/* <nav id='navBar'>
                         <button
                             className={currentPage == '/main' ? 'active' : 'passive'}
                             onClick={() => {
@@ -84,7 +81,7 @@ export default function Navigation() {
                             onClick={() => navigateTo('/about')}>
                             About
                         </button>
-                    </nav>
+                    </nav> */}
                     <div>
                         {linkToSites()}
                     </div>

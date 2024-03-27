@@ -6,9 +6,10 @@ import { click } from "@testing-library/user-event/dist/click";
 export default function DetailButton({ dog }) {
     const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
     const { dogNameOfDetailPage, setDogNameOfDetailPage } = useContext(ContextDog)
+    const {currentPage, setCurrentPage} = useContext(ContextDog);
+
 
     // navigation start
-    const [currentPage, setCurrentPage] = useState(window.location.pathname);
     function navigateTo(page) {
         window.history.pushState({}, '', page);
         setCurrentPage(page)
@@ -30,7 +31,7 @@ export default function DetailButton({ dog }) {
         <>
             <button
                 onClick={() => {
-                    localStorage.setItem('dogName', dog.name);
+
                     setDogNameOfDetailPage(dog.name);
                     navigateTo('/main/dog/' + dog.name)
                     setDisplayFilter(false)
@@ -52,7 +53,7 @@ export default function DetailButton({ dog }) {
                 onClick={() => {
                     navigateTo('/main');
                     setDogNameOfDetailPage('')
-                    localStorage.setItem('dogName', '')
+                    // localStorage.setItem('dogName', '')
                 }}
                 style={{display: dogNameOfDetailPage === '' ? 'none' : 'inline' }}
                 >
