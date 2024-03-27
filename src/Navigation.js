@@ -7,7 +7,10 @@ export const ContextDog = createContext()
 
 export default function Navigation() {
     const [currentPage, setCurrentPage] = useState(window.location.pathname);
-    const [dogNameOfDetailPage, setDogNameOfDetailPage] = useState('');
+    const [dogNameOfDetailPage, setDogNameOfDetailPage] = useState(() => {
+        const storedDogName = localStorage.getItem('dogName');
+        return storedDogName || '';
+    });
     console.log(dogNameOfDetailPage);
 
 
@@ -36,7 +39,10 @@ export default function Navigation() {
             )
         }
         if (currentPage === '/main') {
+            // setDogNameOfDetailPage('')
+            // localStorage.setItem('dogName', '')
             return (
+                
                 <Main></Main>
             )
         }

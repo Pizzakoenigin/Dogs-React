@@ -30,6 +30,7 @@ export default function DetailButton({ dog }) {
         <>
             <button
                 onClick={() => {
+                    localStorage.setItem('dogName', dog.name);
                     setDogNameOfDetailPage(dog.name);
                     navigateTo('/main/dog/' + dog.name)
 
@@ -50,6 +51,7 @@ export default function DetailButton({ dog }) {
                 onClick={() => {
                     navigateTo('/main');
                     setDogNameOfDetailPage('')
+                    localStorage.setItem('dogName', '')
                 }}
                 style={{display: dogNameOfDetailPage === '' ? 'none' : 'inline' }}
                 >
