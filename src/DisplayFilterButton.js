@@ -9,7 +9,8 @@ export default function DisplayFilterButton () {
 
     return(
         <button onClick={toggleDisplayFilter} className= {!displayFilter ? 'foldedInFilter' : 'foldedOutFilter'}>
-            {displayFilter? 'hide Filter' : 'show Filter'}
+            {displayFilter ? 'hide Filter' : <img src="https://cdn-icons-png.flaticon.com/512/107/107799.png" alt="Filter Icon" id="iconFilter"/>}
+
         </button>
     )
 }
