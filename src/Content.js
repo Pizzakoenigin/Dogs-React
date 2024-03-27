@@ -13,9 +13,6 @@ export default function Content(p) {
   const [renderTrigger, setRenderTrigger] = useState(false)
 
   let content = [];
-  // if there is a dog from the previous link we need to remove the %20 that stands for an empty digit. 
-  // let decodedDog = decodeURIComponent(p.Dog)
-
   function sortAlphabet(a, b) {
     if (a.name < b.name) {
       return -1;
@@ -25,9 +22,7 @@ export default function Content(p) {
     }
     return 0;
   }
-  p.Dogs.sort(sortAlphabet);
-
-  // hier wird anhand des Statuses entschieden ob ein einzelnes Item oder die ganze Liste gerendet wird
+  
   if (dogNameOfDetailPage != '') {
     p.Dogs.forEach(dog => {
 
@@ -52,15 +47,8 @@ export default function Content(p) {
 
     })
   } else {
+    p.Dogs.sort(sortAlphabet);
     p.Dogs.forEach(dog => {
-      // console.log(dog.name);
-      // entscheidung nur Dog oder alle Dogs anzeigen
-      // prüfen ob Hunde vorhanden (main/dog/blabla funktioniert nicht)
-      // check if individual dog site is open 
-
-
-
-
       dog.fav = localStorage.getItem(`isFavourite_${dog.name}`);
 
       if (dog.name.toLowerCase().indexOf(p.filterText.toLowerCase()) === -1) {
@@ -93,11 +81,6 @@ export default function Content(p) {
       if (placeholderMax < dog.sizeMax) {
         return
       }
-
-      // eventuell raus?
-
-
-
 
       content.push(
         <Item

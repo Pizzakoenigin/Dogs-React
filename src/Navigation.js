@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext, createContext } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import About from './About';
-import Main, { ContextFilter } from './Main';
+import Main from './Main';
 import Header from './Header';
 
 export const ContextDog = createContext()

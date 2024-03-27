@@ -7,7 +7,6 @@ import { ContextDog } from "./Navigation";
 
 export default function Item({ dog, setRenderTrigger, renderTrigger}) {
   const {isFav, changeFavourite} = useFavourite(false, dog);
-  // const {isDetail, setIsDetail} = useContext(ContextFilter)
   const {dogNameOfDetailPage, setDogNameOfDetailPage} = useContext(ContextDog)
 
   useEffect(() => {

@@ -8,6 +8,5 @@ export default function FavButton({isFav, changeFavourite, children}) {
         {isFav ? "❤️" : "🩶"}{children}
       </button>
     </>
-
   );
 }

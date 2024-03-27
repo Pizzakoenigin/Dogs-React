@@ -9,8 +9,6 @@ export default function MultiRangeSlider({ }) {
         setPlaceholderMin(placeholderMax)
     }
 
-    // if (placeholderMin )
-
     return (
         <div className="sliderSize">
             <input

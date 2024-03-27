@@ -2,13 +2,10 @@ import React, { useState, useContext, createContext } from "react"
 import Filter from "./Filter";
 import Content from "./Content";
 import { Dogs } from './data/dogs'
-// import { ContextDog } from "./Navigation";
 
 export const ContextFilter = createContext();
 
 export default function Main({Dog=''}) {
-  // const { dogNameOnDetailPage, setdogNameOnDetailPage } = useContext(ContextDog)
-
   const [showShort, setshowShort] = useState(true);
   const [showMedium, setshowMedium] = useState(true);
   const [showLong, setshowLong] = useState(true);
@@ -28,13 +25,9 @@ export default function Main({Dog=''}) {
     setshowSmooth(true);
     setshowCurly(true);
     setfilterFav(false);
-
     setfilterText('');
     setPlaceholderMin(10);
     setPlaceholderMax(100);
-
-    // setdogNameOnDetailPage('');
-
   }
 
   return (
@@ -59,9 +52,6 @@ export default function Main({Dog=''}) {
             setfilterText={setfilterText}
           />
           <div id='dogList'>
-            {/* logik ändern entweder content(hundeliste) oder einzelnen Hund anzeigen */}
-            {/* wenn dog nicht = ''  */}
-            
             <Content
               Dog={Dog}
               Dogs={Dogs}
@@ -84,7 +74,6 @@ export default function Main({Dog=''}) {
           </div>
         </div>
       </ContextFilter.Provider>
-
     </>
   )
 }

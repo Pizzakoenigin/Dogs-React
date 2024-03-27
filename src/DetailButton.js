@@ -8,7 +8,6 @@ export default function DetailButton({ dog }) {
     const { dogNameOfDetailPage, setDogNameOfDetailPage } = useContext(ContextDog)
     const {currentPage, setCurrentPage} = useContext(ContextDog);
 
-
     // navigation start
     function navigateTo(page) {
         window.history.pushState({}, '', page);
@@ -57,11 +56,8 @@ export default function DetailButton({ dog }) {
                 }}
                 style={{display: dogNameOfDetailPage === '' ? 'none' : 'inline' }}
                 >
-
                 back to overview
             </button>
         </>
-
-
     )
 }
