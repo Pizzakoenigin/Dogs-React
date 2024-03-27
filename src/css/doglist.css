@@ -54,4 +54,21 @@
   .detailImg {
     height: auto;
   }
+
+  .detailButton {
+    margin: 0.5rem auto !important; 
+  }
+
+  .buttomButtons{
+    display: flex;
+    justify-content: space-between;
+    
+    button{
+      margin: 0.5rem 0;
+    }
+  }
+
+  .copyButton {
+    /* margin: 1% 0 0 80%; */
+  }
 }

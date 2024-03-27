@@ -1,36 +1,37 @@
 import FavButton from "./FavButton"
 import DetailButton from "./DetailButton";
-import { useFavourite} from "./useFavourite"
-import {useState, useEffect, useContext }from "react";
+import CopyToClipboardButton from "./CopyToClipboardButton";
+import { useFavourite } from "./useFavourite"
+import { useState, useEffect, useContext } from "react";
 import { ContextFilter } from "./Main";
 import { ContextDog } from "./Navigation";
 
-export default function Item({ dog, setRenderTrigger, renderTrigger}) {
-  const {isFav, changeFavourite} = useFavourite(false, dog);
-  const {dogNameOfDetailPage, setDogNameOfDetailPage} = useContext(ContextDog)
+export default function Item({ dog, setRenderTrigger, renderTrigger }) {
+  const { isFav, changeFavourite } = useFavourite(false, dog.name);
+  const { dogNameOfDetailPage, setDogNameOfDetailPage } = useContext(ContextDog);
 
   useEffect(() => {
     setRenderTrigger(!renderTrigger);
-  }, [isFav])  //,isDetail
+  }, [isFav])
 
   return (
     <li key={dog.key}
-    className= {dogNameOfDetailPage === ''  ? "" : "detailLiElement"}
+      className={dogNameOfDetailPage === '' ? "" : "detailLiElement"}
     >
-      <img 
-      src={dog.imgUrl} 
-      alt={'Picture of a ' + dog.name} 
-      className= {dogNameOfDetailPage === ''  ? "" : "detailImg"}
-    //   style={{ transition: "transform 0.3s ease", width: "100%", height: "100%" }}
-    // onMouseOver={(e) => {
-    //   e.target.style.transform = "scale(1.02)";
-    // }}
-    // onMouseOut={(e) => {
-    //   e.target.style.transform = "scale(1)";
-    // }}
+      <img
+        src={dog.imgUrl}
+        alt={'Picture of a ' + dog.name}
+        className={dogNameOfDetailPage === '' ? "" : "detailImg"}
+      //   style={{ transition: "transform 0.3s ease", width: "100%", height: "100%" }}
+      // onMouseOver={(e) => {
+      //   e.target.style.transform = "scale(1.02)";
+      // }}
+      // onMouseOut={(e) => {
+      //   e.target.style.transform = "scale(1)";
+      // }}
       />
       <h2>
-        {dog.name} <FavButton dog = {dog} isFav={isFav} changeFavourite={changeFavourite}></FavButton>
+        {dog.name} <FavButton dog={dog} isFav={isFav} changeFavourite={changeFavourite}></FavButton>
       </h2>
       <p>
         {'Fur length: ' + dog.fur_length}
@@ -48,9 +49,12 @@ export default function Item({ dog, setRenderTrigger, renderTrigger}) {
         {'Origin: ' + dog.origin}
       </p>
 
-      <DetailButton dog = {dog}>
-      
-      </DetailButton>
+      <div className="buttomButtons">
+        <DetailButton dog={dog}></DetailButton>
+
+        <CopyToClipboardButton></CopyToClipboardButton>
+      </div>
+
     </li>
   )
 }

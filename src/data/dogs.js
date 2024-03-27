@@ -9,7 +9,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.labradorsduparcdelormoy.com/wp-content/uploads/2021/09/labrador-retriever-1024x665.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "German Shepherd",
@@ -21,7 +20,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://images.ctfassets.net/440y9b545yd9/53KkmFPEBEsbxCzTDjrDmm/5bccce4f47e5f1c68ae1dabdd8db1293/German-Shepherd850.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "French Bulldog",
@@ -32,8 +30,7 @@ export const Dogs = [
     fur_length: "Short",
     fur_surface: "Smooth",
     imgUrl: "https://www.zooplus.at/magazin/wp-content/uploads/2021/02/Franz%C3%B6sische-Bulldogge-1024x683.jpg",
-    fav: true,
-    detail: false
+    fav: false,
   },
   {
     name: "Golden Retriever",
@@ -45,7 +42,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/1/1/csm_Golden_Retriever_Seitenportrait_ecf6462058.jpeg",
     fav: false,
-    detail: false
   },
   {
     name: "Bulldog",
@@ -57,7 +53,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bulldog_inglese.jpg/640px-Bulldog_inglese.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Poodle",
@@ -69,7 +64,6 @@ export const Dogs = [
     fur_surface: "Curly",
     imgUrl: "https://cdn.britannica.com/39/233239-050-50C0C3C5/standard-poodle-dog.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Chihuahua",
@@ -81,7 +75,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.zooroyal.de/magazin/wp-content/uploads/2017/01/chihuahua-hunderassen-760x560.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Beagle",
@@ -93,7 +86,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.zooplus.de/magazin/wp-content/uploads/2017/03/AdobeStock_227689783-Groesse-M.jpeg",
     fav: false,
-    detail: false
   },
   {
     name: "Siberian Husky",
@@ -105,7 +97,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.zooplus.de/magazin/wp-content/uploads/2017/03/Siberian-Husky-mit-Welpe-1.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Boxer",
@@ -117,7 +108,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.rover.com/blog/wp-content/uploads/2020/06/Boxer-2.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Dalmatian",
@@ -129,7 +119,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/a/f/csm_Dalmatiner_Seitenportrait_cc8eb2cff7.jpeg",
     fav: false,
-    detail: false
   },
   {
     name: "Rottweiler",
@@ -141,7 +130,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.zooroyal.de/magazin/wp-content/uploads/2017/01/rottweiler-760x570.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Pomeranian",
@@ -153,7 +141,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.zooroyal.de/magazin/wp-content/uploads/2017/02/zwergspitz-hunderassen-760x560.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Shih Tzu",
@@ -165,7 +152,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/5/6/csm_Shih_Tzu_Portrait_64f22b4401.jpeg",
     fav: false,
-    detail: false
   },
   {
     name: "Great Dane",
@@ -177,7 +163,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://cdn.britannica.com/60/234760-050-FD1BC47F/Harlequin-great-dane-dog.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Pug",
@@ -189,7 +174,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.thesprucepets.com/thmb/uGmlpsHI5-bvwhCIONeZDUtKfjc=/3600x0/filters:no_upscale():strip_icc()/pug-dog-breed-profile-1117989-03-54468a9b49ad4a3abc2da72ed879fc43.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Yorkshire Terrier",
@@ -201,7 +185,6 @@ export const Dogs = [
     fur_surface: "Curly",
     imgUrl: "https://www.zooroyal.de/magazin/wp-content/uploads/2015/09/yorkshire-terrier-hunderassen-760x560.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Border Collie",
@@ -213,7 +196,6 @@ export const Dogs = [
     fur_surface: "Curly",
     imgUrl: "https://frostfutter-perleberg.de/blog/wp-content/uploads/2022/02/Border-Collie-scaled.jpeg",
     fav: false,
-    detail: false
   },
   {
     name: "Australian Shepherd",
@@ -225,7 +207,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.dasgesundetier.de/gfx/lexikon/australian-shepherd.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Basset Hound",
@@ -237,7 +218,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/a/3/csm_Basset_Hound_Portrait_ebb3d0a09f.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Doberman Pinscher",
@@ -249,7 +229,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.omlet.de/images/cache/1024/682/Dog-Doberman_Pinscher-A_male_Doberman_Pinscher_showing_off_his_stubby_tail_and_muscular_body.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Shetland Sheepdog",
@@ -261,7 +240,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/4/4/csm_Shetland_Sheepdog_Portrait_f3bbc55d0d.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Corgi",
@@ -271,9 +249,8 @@ export const Dogs = [
     sizeMax: 31,
     fur_length: "Medium",
     fur_surface: "Smooth",
-    imgUrl: "https://media.os.fressnapf.com/cms/2020/07/ratgeber_hund_rasse_portraits_welsh-corgi-pembroke_1200x527.jpg?t=seoimgsqr_527",
+    imgUrl: "https://www.hundeo.com/wp-content/uploads/2019/04/Welsh-Corgi-Pembroke-glu%CC%88cklich.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Saint Bernard",
@@ -285,7 +262,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://media-be.chewy.com/wp-content/uploads/2021/06/02135531/Saint-Bernard-FeaturedImage.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Bichon Frise",
@@ -297,7 +273,6 @@ export const Dogs = [
     fur_surface: "Curly",
     imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bichon_Fris%C3%A9_-_studdogbichon.jpg/640px-Bichon_Fris%C3%A9_-_studdogbichon.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Papillon",
@@ -309,7 +284,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.mein-haustier.de/wp-content/uploads/2022/03/shutterstock_1627347952.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Shiba Inu",
@@ -321,7 +295,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://www.zooplus.at/magazin/wp-content/uploads/2022/11/AdobeStock_280031305-768x512.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Akita",
@@ -331,9 +304,8 @@ export const Dogs = [
     sizeMax: 75,
     fur_length: "Medium",
     fur_surface: "Smooth",
-    imgUrl: " https://dogs.pedigreeonline.com/images/breeds/dogs/akita.jpg?1708457874",
+    imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/b/e/csm_Akita_Seitenportrait_f181952dd7.jpeg",
     fav: false,
-    detail: false
   },
   {
     name: "Jack Russell Terrier",
@@ -345,7 +317,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://cdn.book-family.de/petbook/data/uploads/2023/07/gettyimages-555907555.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "American Foxhound",
@@ -357,7 +328,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://images.herz-fuer-tiere.de/images/_aliases/1440w/9/3/4/7/237439-1-de-DE/American_Foxhound.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Dachshund",
@@ -369,7 +339,6 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://images.herz-fuer-tiere.de/images/_aliases/1280w/5/9/5/0/110595-1-de-DE/Dackel%20inline%202.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Irish Terrier",
@@ -381,7 +350,6 @@ export const Dogs = [
     fur_surface: "Curly",
     imgUrl: "https://www.zooroyal.de/magazin/wp-content/uploads/2017/05/irish-terrier-hunderassen-760x560.jpg",
     fav: false,
-    detail: false
   }, 
   {
     name: "Bernese mountain dog",
@@ -393,7 +361,6 @@ export const Dogs = [
     fur_surface: "Curly",
     imgUrl: "https://www.dogster.com/wp-content/uploads/2024/01/bernese-mountain-dog-in-the-meadow_Eve-Photography_Shutterstock.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Irish Wolfhound",
@@ -405,7 +372,6 @@ export const Dogs = [
     fur_surface: "Curly",
     imgUrl: "https://www.hunde-info.de/wp-content/uploads/irish-wolfhound.jpg",
     fav: false,
-    detail: false
   },
   {
     name: "Whippet",
@@ -417,6 +383,5 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://2.bp.blogspot.com/-9y6fbigzJfk/UQ4wLFX6kqI/AAAAAAAAAU4/1VM5nAOipAA/s1600/Walea+Yeunesse+Riva+Xanadou+v.K.B..jpg",
     fav: false,
-    detail: false
   }
 ]

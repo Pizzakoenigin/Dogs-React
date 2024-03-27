@@ -4,9 +4,12 @@ import MultiRangeSlider from "./MultiRangeSlider";
 import DisplayFilterButton from "./DisplayFilterButton";
 import { createContext, useContext, useState, useEffect } from "react";
 import { ContextFilter } from "./Main";
+import { ContextDog } from "./Navigation";
 
 export default function Filter(p) {
   const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
+  const {dogNameOfDetailPage, setDogNameOfDetailPage} = useContext(ContextDog);
+
 
   function handleClickShort() {
     p.setshowShort(!p.showShort);
@@ -34,7 +37,11 @@ export default function Filter(p) {
 
   if (displayFilter) {
     return (
-      <div id="filter">
+      <div id="filter" 
+      // show filters in overview
+        style={{display: dogNameOfDetailPage !== '' ? 'none' : 'inline'}}
+
+      >
         <form id='filterButtons'>
           <h3>Filter</h3>
           <h4>Fur</h4>
@@ -51,7 +58,7 @@ export default function Filter(p) {
           </div>
 
           <h4>Height in cm</h4>
-          <MultiRangeSlider placeholderMin={p.placeholderMin} setPlaceholderMin={p.setPlaceholderMin} placeholderMax={p.placeholderMax} setPlaceholderMax={p.setPlaceholderMax}></MultiRangeSlider>
+          <MultiRangeSlider filterRangeMin={p.filterRangeMin} setFilterRangeMin={p.setFilterRangeMin} filterRangeMax={p.filterRangeMax} setFilterRangeMax={p.setFilterRangeMax}></MultiRangeSlider>
 
           <h4>Favourite</h4>
           <Button clickHandler={handleClickFav} filter={p.filterFav}>Show only favourite dogs ❤️</Button>
@@ -70,7 +77,11 @@ export default function Filter(p) {
     );
   } else {
     return (
-      <DisplayFilterButton displayFilter={p.displayFilter} setDisplayFilter={p.setDisplayFilter}></DisplayFilterButton>
+      // hide filters in detailpage
+      <div style={{display: dogNameOfDetailPage !== '' ? 'none' : 'inline'}}>
+        <DisplayFilterButton displayFilter={p.displayFilter} setDisplayFilter={p.setDisplayFilter}></DisplayFilterButton>
+      </div>
+      
     )
   }
 };

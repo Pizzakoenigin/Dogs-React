@@ -14,8 +14,8 @@ export default function Main({Dog=''}) {
   const [filterFav, setfilterFav] = useState(false);
   
   const [filterText, setfilterText] = useState('');
-  const [placeholderMin, setPlaceholderMin] = useState(10);
-  const [placeholderMax, setPlaceholderMax] = useState(100);
+  const [filterRangeMin, setfilterRangeMin] = useState(10);
+  const [filterRangeMax, setFilterRangeMax] = useState(100);
   const [displayFilter, setDisplayFilter] = useState(true);
 
   function resetStatus() {
@@ -26,13 +26,13 @@ export default function Main({Dog=''}) {
     setshowCurly(true);
     setfilterFav(false);
     setfilterText('');
-    setPlaceholderMin(10);
-    setPlaceholderMax(100);
+    setfilterRangeMin(10);
+    setFilterRangeMax(100);
   }
 
   return (
     <>
-      <ContextFilter.Provider value={{ displayFilter, setDisplayFilter, placeholderMin, setPlaceholderMin, placeholderMax, setPlaceholderMax }}> {/* isDetail, setIsDetail  // auf entsprechende statuse anwenden*/}
+      <ContextFilter.Provider value={{ displayFilter, setDisplayFilter, filterRangeMin, setfilterRangeMin, filterRangeMax, setFilterRangeMax }}> {/* isDetail, setIsDetail  // auf entsprechende statuse anwenden*/}
         <div id='main'>
           <Filter
             showShort={showShort}

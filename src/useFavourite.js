@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
 
-export function useFavourite(init, dog) {
-  const [isFavourite, setIsFavourite] = useState(() => {
-    const storedValue = localStorage.getItem(`isFavourite_${dog.name}`);
+export function useFavourite(init, nameOfFavDog) {
+  console.log('usefavourite called');
+  const [localStorageFavourite, setLocalStorageFavourite] = useState(() => {
+    const storedValue = localStorage.getItem(`isFavourite_${nameOfFavDog}`);
     return storedValue !== null ? JSON.parse(storedValue) : init;
   });
 
   useEffect(() => {
-    localStorage.setItem(`isFavourite_${dog.name}`, JSON.stringify(isFavourite));
-  }, [isFavourite, dog.name]);
+    localStorage.setItem(`isFavourite_${nameOfFavDog}`, 
+    JSON.stringify(localStorageFavourite));
+  }, [localStorageFavourite, nameOfFavDog]);
 
   function changeFavourite() {
-    setIsFavourite(!isFavourite)
-    dog.fav = !isFavourite
+    const updatedFavourite = !localStorageFavourite;
+    setLocalStorageFavourite(updatedFavourite);
+    localStorage.setItem(`isFavourite_${nameOfFavDog}`, JSON.stringify(updatedFavourite));
+
   }
-  return [isFavourite, changeFavourite];
+
+  return { isFav: localStorageFavourite, changeFavourite };
 }

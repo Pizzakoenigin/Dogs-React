@@ -4,11 +4,10 @@ import { ContextFilter } from "./Main";
 import { ContextDog } from "./Navigation";
 
 export default function Content(p) {
-  const { placeholderMin, setPlaceholderMin } = useContext(ContextFilter)
-  const { placeholderMax, setPlaceholderMax } = useContext(ContextFilter)
+  const { filterRangeMin, setFilterRangeMin } = useContext(ContextFilter)
+  const { filterRangeMax, setFilterRangeMax } = useContext(ContextFilter)
   const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
-  const { isDetail, setIsDetail } = useContext(ContextFilter)
-  const {dogNameOfDetailPage, setDogNameOfDetailPage} = useContext(ContextDog)
+  const { dogNameOfDetailPage, setDogNameOfDetailPage } = useContext(ContextDog)
 
   const [renderTrigger, setRenderTrigger] = useState(false)
 
@@ -22,9 +21,10 @@ export default function Content(p) {
     }
     return 0;
   }
-  
+
   if (dogNameOfDetailPage != '') {
     p.Dogs.forEach(dog => {
+      setDisplayFilter(false)
 
       if (dog.name != p.Dog) {
         return
@@ -40,11 +40,9 @@ export default function Content(p) {
             filterFav={p.filterFav}
             setRenderTrigger={setRenderTrigger}
             renderTrigger={renderTrigger}
-
           />
         )
       }
-
     })
   } else {
     p.Dogs.sort(sortAlphabet);
@@ -74,11 +72,11 @@ export default function Content(p) {
         return
       }
 
-      if (placeholderMin > dog.sizeMin) {
+      if (filterRangeMin > dog.sizeMin) {
         return
       }
 
-      if (placeholderMax < dog.sizeMax) {
+      if (filterRangeMax < dog.sizeMax) {
         return
       }
 

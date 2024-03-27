@@ -6,7 +6,7 @@ import { click } from "@testing-library/user-event/dist/click";
 export default function DetailButton({ dog }) {
     const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
     const { dogNameOfDetailPage, setDogNameOfDetailPage } = useContext(ContextDog)
-    const {currentPage, setCurrentPage} = useContext(ContextDog);
+    const { currentPage, setCurrentPage } = useContext(ContextDog);
 
     // navigation start
     function navigateTo(page) {
@@ -35,10 +35,12 @@ export default function DetailButton({ dog }) {
                     setDisplayFilter(false)
                 }}
                 className="detailButton"
-                style={{ transition: "transform 0.3s ease", 
-                display: dogNameOfDetailPage === '' ? 'inline' : 'none' }}
+                style={{
+                    transition: "transform 0.3s ease",
+                    display: dogNameOfDetailPage === '' ? 'inline' : 'none'
+                }}
                 onMouseOver={(e) => {
-                    e.target.style.transform = "scale(1.02)";
+                    e.target.style.transform = "scale(1.05)";
                 }}
                 onMouseOut={(e) => {
                     e.target.style.transform = "scale(1)";
@@ -51,8 +53,17 @@ export default function DetailButton({ dog }) {
                     navigateTo('/main');
                     setDogNameOfDetailPage('')
                 }}
-                style={{display: dogNameOfDetailPage === '' ? 'none' : 'inline' }}
-                >
+                style={{
+                    transition: "transform 0.3s ease",
+                    display: dogNameOfDetailPage === '' ? 'none' : 'inline'
+                }}
+                onMouseOver={(e) => {
+                    e.target.style.transform = "scale(1.05)";
+                }}
+                onMouseOut={(e) => {
+                    e.target.style.transform = "scale(1)";
+                }}
+            >
                 back to overview
             </button>
         </>
