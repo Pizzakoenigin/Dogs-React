@@ -61,6 +61,12 @@ body {
     z-index: 4;
 }
 
+input[type="range"]::-webkit-slider-thumb {
+    background-color: transparent;
+    border: none;
+  }
+  
+
 /* for chrome */
 .thumb::-webkit-slider-thumb {
     background-color: #f1f5f7;

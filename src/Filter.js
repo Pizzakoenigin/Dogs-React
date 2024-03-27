@@ -40,7 +40,6 @@ export default function Filter(p) {
       <div id="filter" 
       // show filters in overview
         style={{display: dogNameOfDetailPage !== '' ? 'none' : 'inline'}}
-
       >
         <div className='filterButtons'>
           <h3>Filter</h3>
