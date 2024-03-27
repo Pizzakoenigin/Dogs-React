@@ -2,12 +2,12 @@ import React, { useState, useContext, createContext } from "react"
 import Filter from "./Filter";
 import Content from "./Content";
 import { Dogs } from './data/dogs'
-import { ContextDog } from "./Navigation";
+// import { ContextDog } from "./Navigation";
 
 export const ContextFilter = createContext();
 
 export default function Main({Dog=''}) {
-  const { dogNameOnDetailPage, setdogNameOnDetailPage } = useContext(ContextDog)
+  // const { dogNameOnDetailPage, setdogNameOnDetailPage } = useContext(ContextDog)
 
   const [showShort, setshowShort] = useState(true);
   const [showMedium, setshowMedium] = useState(true);
@@ -21,9 +21,6 @@ export default function Main({Dog=''}) {
   const [placeholderMax, setPlaceholderMax] = useState(100);
   const [displayFilter, setDisplayFilter] = useState(true);
 
-  
-  // const [isDetail, setIsDetail] = useState(false)
-
   function resetStatus() {
     setshowShort(true);
     setshowMedium(true);
@@ -36,22 +33,9 @@ export default function Main({Dog=''}) {
     setPlaceholderMin(10);
     setPlaceholderMax(100);
 
-    setdogNameOnDetailPage('');
-    // setIsDetail(false)
+    // setdogNameOnDetailPage('');
+
   }
-
-  // hier reset des detailstatus wenn die hunde detail seite neugeladen wird
-
-  // if (Dog != ''){
-  //   setIsDetail(true);
-  // p.setShowDetail(false)
-  // dog.detail = true
-  // setDisplayFilter(true)
-  // }
-
-  // zuviele statusE?
-
-  
 
   return (
     <>
@@ -88,7 +72,6 @@ export default function Main({Dog=''}) {
               showSmooth={showSmooth}
               showCurly={showCurly}
               filterFav={filterFav}
-
               setshowCurly={setshowCurly}
               setshowSmooth={setshowSmooth}
               setshowLong={setshowLong}
@@ -97,7 +80,6 @@ export default function Main({Dog=''}) {
               setfilterFav={setfilterFav}
               setfilterText={setfilterText}
               resetStatus={resetStatus}
-
             />
           </div>
         </div>

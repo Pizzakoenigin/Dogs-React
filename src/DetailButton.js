@@ -4,7 +4,7 @@ import { ContextDog } from "./Navigation";
 import { click } from "@testing-library/user-event/dist/click";
 
 export default function DetailButton({ dog }) {
-    // const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
+    const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
     const { dogNameOfDetailPage, setDogNameOfDetailPage } = useContext(ContextDog)
 
     // navigation start
@@ -33,6 +33,7 @@ export default function DetailButton({ dog }) {
                     localStorage.setItem('dogName', dog.name);
                     setDogNameOfDetailPage(dog.name);
                     navigateTo('/main/dog/' + dog.name)
+                    setDisplayFilter(false)
 
                 }}
                 className="detailButton"

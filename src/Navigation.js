@@ -7,28 +7,30 @@ export const ContextDog = createContext()
 
 export default function Navigation() {
     const [currentPage, setCurrentPage] = useState(window.location.pathname);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const dogNameFromURL = urlParams.get('dogName');
+    if (dogNameFromURL) {
+        console.log('there is an URL');
+        let capitalizedDogNameFromURL = dogNameFromURL.charAt(0).toUpperCase()+dogNameFromURL.slice(1);
+        
+        console.log(capitalizedDogNameFromURL);
+        localStorage.setItem('dogName', capitalizedDogNameFromURL);
+    }
+
+
     const [dogNameOfDetailPage, setDogNameOfDetailPage] = useState(() => {
         const storedDogName = localStorage.getItem('dogName');
         return storedDogName || '';
     });
     console.log(dogNameOfDetailPage);
 
+// hundename aus link extrahieren ohne local storage zu nutzen
 
     function navigateTo(page) {
         window.history.pushState({}, '', page);
         setCurrentPage(page)
     };
-
-    // function getDogName(link) {
-    //     const searchTerm = 'main/dog/';
-    //     const indexOfFirst = link.indexOf(searchTerm);
-    //     if (indexOfFirst !== -1) {
-    //         let dogName = link.substring(indexOfFirst + searchTerm.length);
-    //         return dogName;
-    //     }
-
-    //     return null;
-    // }
 
     function linkToSites() {
         if (currentPage.includes('main/dog/')) {
@@ -42,7 +44,7 @@ export default function Navigation() {
             // setDogNameOfDetailPage('')
             // localStorage.setItem('dogName', '')
             return (
-                
+
                 <Main></Main>
             )
         }
@@ -66,7 +68,7 @@ export default function Navigation() {
 
     return (
         <>
-            <ContextDog.Provider value={{dogNameOfDetailPage, setDogNameOfDetailPage}}>
+            <ContextDog.Provider value={{ dogNameOfDetailPage, setDogNameOfDetailPage }}>
                 <Header />
                 <div>
                     <nav id='navBar'>
