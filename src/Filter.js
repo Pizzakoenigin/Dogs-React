@@ -42,7 +42,7 @@ export default function Filter(p) {
         style={{display: dogNameOfDetailPage !== '' ? 'none' : 'inline'}}
 
       >
-        <form id='filterButtons'>
+        <div className='filterButtons'>
           <h3>Filter</h3>
           <h4>Fur</h4>
           <div id="furLength">
@@ -72,13 +72,13 @@ export default function Filter(p) {
 
             <DisplayFilterButton></DisplayFilterButton>
           </div>
-        </form>
+        </div>
       </div>
     );
   } else {
     return (
       // hide filters in detailpage
-      <div style={{display: dogNameOfDetailPage !== '' ? 'none' : 'inline'}}>
+      <div style={{display: dogNameOfDetailPage !== '' ? 'none' : 'inline'}} >
         <DisplayFilterButton displayFilter={p.displayFilter} setDisplayFilter={p.setDisplayFilter}></DisplayFilterButton>
       </div>
       
