@@ -1,9 +1,9 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { ContextDog } from "./Main";
+import { ContextFilter } from "./Main";
 
 export default function MultiRangeSlider({ }) {
-    const {placeholderMin, setPlaceholderMin} = useContext(ContextDog)
-    const {placeholderMax, setPlaceholderMax} = useContext(ContextDog)
+    const {placeholderMin, setPlaceholderMin} = useContext(ContextFilter)
+    const {placeholderMax, setPlaceholderMax} = useContext(ContextFilter)
 
     if (placeholderMin > placeholderMax || placeholderMin == 100) {
         setPlaceholderMin(placeholderMax)

@@ -2,24 +2,27 @@ import React, { useState, useContext, createContext } from "react"
 import Filter from "./Filter";
 import Content from "./Content";
 import { Dogs } from './data/dogs'
+import { ContextDog } from "./Navigation";
 
-export const ContextDog = createContext();
+export const ContextFilter = createContext();
 
 export default function Main({Dog=''}) {
+  const { dogNameOnDetailPage, setdogNameOnDetailPage } = useContext(ContextDog)
+
   const [showShort, setshowShort] = useState(true);
   const [showMedium, setshowMedium] = useState(true);
   const [showLong, setshowLong] = useState(true);
   const [showSmooth, setshowSmooth] = useState(true);
-  const [showCurly, setshowCurly] = useState(true)
-  const [filterFav, setfilterFav] = useState(false)
+  const [showCurly, setshowCurly] = useState(true);
+  const [filterFav, setfilterFav] = useState(false);
   
-  const [filterText, setfilterText] = useState('')
-  const [placeholderMin, setPlaceholderMin] = useState(10)
-  const [placeholderMax, setPlaceholderMax] = useState(100)
-  const [displayFilter, setDisplayFilter] = useState(true)
+  const [filterText, setfilterText] = useState('');
+  const [placeholderMin, setPlaceholderMin] = useState(10);
+  const [placeholderMax, setPlaceholderMax] = useState(100);
+  const [displayFilter, setDisplayFilter] = useState(true);
 
-  const [clickedDog, setClickedDog] = useState('')
-  const [isDetail, setIsDetail] = useState(false)
+  
+  // const [isDetail, setIsDetail] = useState(false)
 
   function resetStatus() {
     setshowShort(true);
@@ -33,8 +36,8 @@ export default function Main({Dog=''}) {
     setPlaceholderMin(10);
     setPlaceholderMax(100);
 
-    setClickedDog('')
-    setIsDetail(false)
+    setdogNameOnDetailPage('');
+    // setIsDetail(false)
   }
 
   // hier reset des detailstatus wenn die hunde detail seite neugeladen wird
@@ -52,7 +55,7 @@ export default function Main({Dog=''}) {
 
   return (
     <>
-      <ContextDog.Provider value={{ displayFilter, setDisplayFilter, placeholderMin, setPlaceholderMin, placeholderMax, setPlaceholderMax, isDetail, setIsDetail, clickedDog, setClickedDog}}> {/*// auf entsprechende statuse anwenden*/}
+      <ContextFilter.Provider value={{ displayFilter, setDisplayFilter, placeholderMin, setPlaceholderMin, placeholderMax, setPlaceholderMax }}> {/* isDetail, setIsDetail  // auf entsprechende statuse anwenden*/}
         <div id='main'>
           <Filter
             showShort={showShort}
@@ -98,7 +101,7 @@ export default function Main({Dog=''}) {
             />
           </div>
         </div>
-      </ContextDog.Provider>
+      </ContextFilter.Provider>
 
     </>
   )

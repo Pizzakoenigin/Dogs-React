@@ -3,10 +3,10 @@ import Searchfield from "./Searchfield";
 import MultiRangeSlider from "./MultiRangeSlider";
 import DisplayFilterButton from "./DisplayFilterButton";
 import { createContext, useContext, useState, useEffect } from "react";
-import { ContextDog } from "./Main";
+import { ContextFilter } from "./Main";
 
 export default function Filter(p) {
-  const { displayFilter, setDisplayFilter } = useContext(ContextDog)
+  const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
 
   function handleClickShort() {
     p.setshowShort(!p.showShort);

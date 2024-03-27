@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { ContextDog } from "./Main";
+import { ContextFilter } from "./Main";
 
 export default function DisplayFilterButton () {
-    const { displayFilter, setDisplayFilter } = useContext(ContextDog)
+    const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
     function toggleDisplayFilter() {
         setDisplayFilter(!displayFilter)
     }
