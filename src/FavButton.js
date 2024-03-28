@@ -3,6 +3,7 @@ export default function FavButton({isFav, changeFavourite, children}) {
     <>
       <button
         className={"dogFavButton"}
+        // call the changeFavourite funtion inside the custom useFavourite Hook
         onClick={changeFavourite}
       >
         {isFav ? "❤️" : "🩶"}{children}

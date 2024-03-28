@@ -26,13 +26,6 @@ export default function Item({ dog, setRenderTrigger, renderTrigger }) {
         alt={'Picture of a ' + dog.name}
         // if this item is displayed in the detailpage give it a different class and different css styling
         className={dogNameOfDetailPage === '' ? "" : "detailImg"}
-      //   style={{ transition: "transform 0.3s ease", width: "100%", height: "100%" }}
-      // onMouseOver={(e) => {
-      //   e.target.style.transform = "scale(1.02)";
-      // }}
-      // onMouseOut={(e) => {
-      //   e.target.style.transform = "scale(1)";
-      // }}
       />
       <h2>
         {dog.name} <FavButton dog={dog} isFav={isFav} changeFavourite={changeFavourite}></FavButton>
@@ -63,3 +56,10 @@ export default function Item({ dog, setRenderTrigger, renderTrigger }) {
   )
 }
 
+      //   style={{ transition: "transform 0.3s ease", width: "100%", height: "100%" }}
+      // onMouseOver={(e) => {
+      //   e.target.style.transform = "scale(1.02)";
+      // }}
+      // onMouseOut={(e) => {
+      //   e.target.style.transform = "scale(1)";
+      // }}
