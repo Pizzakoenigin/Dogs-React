@@ -2,23 +2,27 @@ body {
     --distance-to-top: 50%
 }
 
-.coverAreaSlider {
-    position: absolute;
-    top: var(--distance-to-top);
-    height: 10px;
-    /* width: 200px; */
-    background-color: var(--button-color);
-    border-radius: 5px;
-}
-
-
 .slider {
+    /* display: block; */
+    position: relative;
+}
+.areaSlider {
     position: absolute;
-    top: var(--distance-to-top);
+    /* top: var(--distance-to-top); */
     width: 200px;
     height: 10px;
     background-color: white;
     border-radius: 5px;
+}
+
+.coverAreaSlider {
+    position: absolute;
+    /* top: var(--distance-to-top); */
+    height: 10px;
+    /* width: 200px; */
+    background-color: var(--button-color);
+    border-radius: 5px;
+    /* padding-right: 20px; */
 }
 
 .sliderTrack, .sliderRange {
@@ -47,7 +51,7 @@ body {
 .thumb {
     pointer-events: none;
     position: absolute;
-    top: var(--distance-to-top);    /* sollte irgendwie so geändert werden das es sich an den slider orientiert */
+    /* top: var(--distance-to-top);    sollte irgendwie so geändert werden das es sich an den slider orientiert */
     height: 0;
     width: 200px;
     outline: none;
@@ -55,6 +59,7 @@ body {
 
 .thumb-3 {
     z-index: 3;
+    
 }
 
 .thumb-4 {
@@ -62,7 +67,7 @@ body {
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    background-color: transparent;
+    color: green;
     border: none;
   }
   
