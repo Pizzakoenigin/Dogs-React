@@ -9,6 +9,7 @@ export default function Navigation() {
     const [currentPage, setCurrentPage] = useState(window.location.pathname);
     const [dogNameOfDetailPage, setDogNameOfDetailPage] = useState('')
 
+    // on refresh of the page get the name of the current dog from the url and use the name as variable for rendering the content
     function getDogName(link) {
         const searchTerm = 'main/dog/';
         const indexOfFirst = link.indexOf(searchTerm);
@@ -19,6 +20,7 @@ export default function Navigation() {
         return null;
     }
 
+    // useEffect for browser navigation
     useEffect(() => {
         const handlePopState = (e) => {
             setCurrentPage(window.location.pathname);
@@ -47,20 +49,29 @@ export default function Navigation() {
                 <Main Dog={decodedDog} />
             )
         }
-        if (currentPage === '/main') {
-            return (
+        // if (currentPage === '/main' || currentPage) {
+        //     return (
 
-                <Main></Main>
-            )
-        }
+        //         <Main></Main>
+        //     )
+        // }
         if (currentPage === '/about')
             return (
                 <About></About>
             )
-    }
+
+            // if the user types invalid stuff like /blabla change to /main
+        if (currentPage !='/main')
+            window.location.replace("/main")
+        return(
+
+            <Main/>
+        )
+    } 
 
     return (
         <>
+        {/* context provides the status of dog and current page to components that need it */}
             <ContextDog.Provider value={{ dogNameOfDetailPage, setDogNameOfDetailPage, currentPage, setCurrentPage }}>
                 <Header />
                 <div>

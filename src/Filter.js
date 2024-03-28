@@ -10,7 +10,7 @@ export default function Filter(p) {
   const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
   const {dogNameOfDetailPage, setDogNameOfDetailPage} = useContext(ContextDog);
 
-
+// change the status of filters
   function handleClickShort() {
     p.setshowShort(!p.showShort);
   }

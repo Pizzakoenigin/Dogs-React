@@ -2,13 +2,14 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { ContextFilter } from "./Main";
 
 export default function MultiRangeSlider({ }) {
+    // create two statuses for min and max range of the filter. these are used in the slider an the numbers input
     const {filterRangeMin, setfilterRangeMin} = useContext(ContextFilter)
     const {filterRangeMax, setFilterRangeMax} = useContext(ContextFilter)
 
     if (filterRangeMin > filterRangeMax || filterRangeMin == 100) {
         setfilterRangeMin(filterRangeMax)
     }
-
+// with the power of ccs two sliders are created on top of each other (z value)
     return (
         <div className="sliderSize">
             <input
@@ -34,12 +35,13 @@ export default function MultiRangeSlider({ }) {
             />
 
             <div className="slider" />
-            {/*   mit zwei multiplizieren weil der slider 200px breit ist. placeholder min ist aber eine Wert zwischen 0 und 1 also muss er mit 2 multipliziert werden um auf die komplette fläche des sliders zu passen  */}
-            {/* beim zweiten ist es mal 2.1 weil der rechte rand von dem cover nicht ganz unter den max regler liegt wen ich es nur mit 2 multipliziere*/}
+            {/*   multiply by 2 bc the slider is 200px width. but min is a value between 0 and 100. so multiply by two to cover the whole area  */}
+            {/*  here i multiply with 2.1 because otherwise it looks weird*/}
             <div className="coverAreaSlider" style={{ left: filterRangeMin * 2 + "px", width: (filterRangeMax - filterRangeMin) * 2.1 + "px" }}>
             </div>
 
             <div className="numberInputSlider">
+                {/* regular number input */}
                 <input
                     className="inputSlider"
                     type="number"

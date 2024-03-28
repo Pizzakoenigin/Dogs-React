@@ -14,6 +14,7 @@ export default function DetailButton({ dog }) {
         setCurrentPage(page)
     }
 
+    // browser history forward, nackward functionality
     useEffect(() => {
         const handlePopState = (e) => {
             setCurrentPage(window.location.pathname);
@@ -27,7 +28,8 @@ export default function DetailButton({ dog }) {
     }, [])
 
     return (
-        <>
+        <> 
+        {/* if you click on the detailpage button change the usestate of the dogname to that name */}
             <button
                 onClick={() => {
                     setDogNameOfDetailPage(dog.name);

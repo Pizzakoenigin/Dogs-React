@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { ContextFilter } from "./Main";
 
+// toggle between showing the entire filter or just the funnel symbol at the edge of the page
 export default function DisplayFilterButton () {
     const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
     function toggleDisplayFilter() {

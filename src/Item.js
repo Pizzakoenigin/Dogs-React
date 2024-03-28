@@ -7,7 +7,9 @@ import { ContextFilter } from "./Main";
 import { ContextDog } from "./Navigation";
 
 export default function Item({ dog, setRenderTrigger, renderTrigger }) {
+  // custom hook for setting a dog as fav
   const { isFav, changeFavourite } = useFavourite(false, dog.name);
+
   const { dogNameOfDetailPage, setDogNameOfDetailPage } = useContext(ContextDog);
 
   useEffect(() => {
@@ -16,11 +18,13 @@ export default function Item({ dog, setRenderTrigger, renderTrigger }) {
 
   return (
     <li key={dog.key}
+    // if this item is displayed in the detailpage give it a different class and different css styling
       className={dogNameOfDetailPage === '' ? "" : "detailLiElement"}
     >
       <img
         src={dog.imgUrl}
         alt={'Picture of a ' + dog.name}
+        // if this item is displayed in the detailpage give it a different class and different css styling
         className={dogNameOfDetailPage === '' ? "" : "detailImg"}
       //   style={{ transition: "transform 0.3s ease", width: "100%", height: "100%" }}
       // onMouseOver={(e) => {

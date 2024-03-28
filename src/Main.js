@@ -6,6 +6,7 @@ import { Dogs } from './data/dogs'
 export const ContextFilter = createContext();
 
 export default function Main({Dog=''}) {
+  // usestates for clicking on or off buttons
   const [showShort, setshowShort] = useState(true);
   const [showMedium, setshowMedium] = useState(true);
   const [showLong, setshowLong] = useState(true);
@@ -18,6 +19,7 @@ export default function Main({Dog=''}) {
   const [filterRangeMax, setFilterRangeMax] = useState(100);
   const [displayFilter, setDisplayFilter] = useState(true);
 
+  // resetbutton
   function resetStatus() {
     setshowShort(true);
     setshowMedium(true);
@@ -32,6 +34,7 @@ export default function Main({Dog=''}) {
 
   return (
     <>
+    {/* provide context to components that are deeper in the website structure. so you don't need to pass them multiple times via properties */}
       <ContextFilter.Provider value={{ displayFilter, setDisplayFilter, filterRangeMin, setfilterRangeMin, filterRangeMax, setFilterRangeMax }}> {/* isDetail, setIsDetail  // auf entsprechende statuse anwenden*/}
         <div id='main'>
           <Filter
