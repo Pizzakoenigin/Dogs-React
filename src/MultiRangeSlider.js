@@ -36,12 +36,11 @@ export default function MultiRangeSlider({ }) {
                 />
 
                 <div className="areaSlider" />
-                {/*   multiply by 2 bc the slider is 200px width. but min is a value between 0 and 100. so multiply by two to cover the whole area  */}
-                {/*  here i multiply with 1.8 because otherwise it looks weird*/}
-                <div className="coverAreaSlider" style={{ left: (filterRangeMin * 1.8) + "px", width: (filterRangeMax - filterRangeMin) * 2 + "px" }}>
+                {/*  width: multiply by 2 bc the slider is 200px width. but min is a value between 0 and 100. so multiply by two to cover the whole area  */}
+                {/*  left: here i multiply with 1.8 because otherwise it looks weird*/}
+                <div className="coverAreaSlider" style={{ left: (filterRangeMin * 1.8)  + "px", width: (filterRangeMax - filterRangeMin) * 2 + "px" }}>
                 </div>
             </div>
-
 
             <div className="numberInputSlider">
                 {/* regular number input */}
