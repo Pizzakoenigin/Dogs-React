@@ -12,7 +12,7 @@ export default function Content(p) {
   const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
   // show detailpage of dog or not
   const { dogNameOfDetailPage, setDogNameOfDetailPage } = useContext(ContextDog)
-  // triggering a re render if the fav status of a dog changes otherwise the appearance of theheart symbol doesnt change. and unfavouriting a dog doesnt remove him from the display of fav dogs.
+  // triggering a re render if the fav status of a dog changes otherwise the appearance of the heart symbol doesnt change. and unfavouriting a dog doesnt remove him from the display of fav dogs.
   const [renderTrigger, setRenderTrigger] = useState(false)
 
   let content = [];

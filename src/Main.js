@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext } from "react"
+import React, { useState, createContext } from "react"
 import Filter from "./Filter";
 import Content from "./Content";
 import { Dogs } from './data/dogs'
@@ -35,7 +35,7 @@ export default function Main({Dog=''}) {
   return (
     <>
     {/* provide context to components that are deeper in the website structure. so you don't need to pass them multiple times via properties */}
-      <ContextFilter.Provider value={{ displayFilter, setDisplayFilter, filterRangeMin, setfilterRangeMin, filterRangeMax, setFilterRangeMax }}> {/* isDetail, setIsDetail  // auf entsprechende statuse anwenden*/}
+      <ContextFilter.Provider value={{ displayFilter, setDisplayFilter, filterRangeMin, setfilterRangeMin, filterRangeMax, setFilterRangeMax }}>
         <div id='main'>
           <Filter
             showShort={showShort}

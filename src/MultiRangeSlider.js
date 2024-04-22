@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { ContextFilter } from "./Main";
 
 export default function MultiRangeSlider({ }) {

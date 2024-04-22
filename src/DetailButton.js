@@ -1,7 +1,6 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { ContextFilter } from "./Main";
 import { ContextDog } from "./Navigation";
-import { click } from "@testing-library/user-event/dist/click";
 
 export default function DetailButton({ dog }) {
     const { displayFilter, setDisplayFilter } = useContext(ContextFilter)
@@ -14,7 +13,7 @@ export default function DetailButton({ dog }) {
         setCurrentPage(page)
     }
 
-    // browser history forward, nackward functionality
+    // browser history forward, backward functionality
     useEffect(() => {
         const handlePopState = (e) => {
             setCurrentPage(window.location.pathname);
@@ -48,8 +47,8 @@ export default function DetailButton({ dog }) {
                     e.target.style.transform = "scale(1)";
                 }}>
                 🔎 Show Details
-
             </button>
+            
             <button
                 onClick={() => {
                     navigateTo('/main');

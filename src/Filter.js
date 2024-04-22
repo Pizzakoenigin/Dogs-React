@@ -2,7 +2,7 @@ import Button from "./FilterButton";
 import Searchfield from "./Searchfield";
 import MultiRangeSlider from "./MultiRangeSlider";
 import DisplayFilterButton from "./DisplayFilterButton";
-import { createContext, useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { ContextFilter } from "./Main";
 import { ContextDog } from "./Navigation";
 

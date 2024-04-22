@@ -49,53 +49,27 @@ export default function Navigation() {
                 <Main Dog={decodedDog} />
             )
         }
-        // if (currentPage === '/main' || currentPage) {
-        //     return (
 
-        //         <Main></Main>
-        //     )
-        // }
-        if (currentPage === '/about')
-            return (
-                <About></About>
-            )
-
-            // if the user types invalid stuff like /blabla change to /main
-        if (currentPage !='/main')
+        // if the user types invalid stuff like /blabla change to /main
+        if (currentPage != '/main')
             window.location.replace("/main")
-        return(
-
-            <Main/>
+        return (
+            <Main />
         )
-    } 
+    }
 
     return (
         <>
-        {/* context provides the status of dog and current page to components that need it */}
+            {/* context provides the status of dog and current page to components that need it */}
             <ContextDog.Provider value={{ dogNameOfDetailPage, setDogNameOfDetailPage, currentPage, setCurrentPage }}>
                 <Header />
                 <div>
-                    {/* <nav id='navBar'>
-                        <button
-                            className={currentPage == '/main' ? 'active' : 'passive'}
-                            onClick={() => {
-                                navigateTo('/main')
-                            }}>
-                            Home
-                        </button>
-                        <button
-                            className={currentPage == '/about' ? 'active' : 'passive'}
-                            onClick={() => navigateTo('/about')}>
-                            About
-                        </button>
-                    </nav> */}
                     <div>
                         {linkToSites()}
                     </div>
                     {currentPage === '/main'}
                 </div>
             </ContextDog.Provider>
-
         </>
     )
 }

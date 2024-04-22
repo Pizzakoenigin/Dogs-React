@@ -2,8 +2,7 @@ import FavButton from "./FavButton"
 import DetailButton from "./DetailButton";
 import CopyToClipboardButton from "./CopyToClipboardButton";
 import { useFavourite } from "./useFavourite"
-import { useState, useEffect, useContext } from "react";
-import { ContextFilter } from "./Main";
+import { useEffect, useContext } from "react";
 import { ContextDog } from "./Navigation";
 
 export default function Item({ dog, setRenderTrigger, renderTrigger }) {
@@ -55,11 +54,3 @@ export default function Item({ dog, setRenderTrigger, renderTrigger }) {
     </li>
   )
 }
-
-      //   style={{ transition: "transform 0.3s ease", width: "100%", height: "100%" }}
-      // onMouseOver={(e) => {
-      //   e.target.style.transform = "scale(1.02)";
-      // }}
-      // onMouseOut={(e) => {
-      //   e.target.style.transform = "scale(1)";
-      // }}

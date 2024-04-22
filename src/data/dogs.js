@@ -350,7 +350,7 @@ export const Dogs = [
     fur_surface: "Curly",
     imgUrl: "https://www.zooroyal.de/magazin/wp-content/uploads/2017/05/irish-terrier-hunderassen-760x560.jpg",
     fav: false,
-  }, 
+  },
   {
     name: "Bernese mountain dog",
     lifespan: "6 - 8 years",
@@ -383,8 +383,9 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://2.bp.blogspot.com/-9y6fbigzJfk/UQ4wLFX6kqI/AAAAAAAAAU4/1VM5nAOipAA/s1600/Walea+Yeunesse+Riva+Xanadou+v.K.B..jpg",
     fav: false,
-  },{
-    name:"Miniature Pinscher",
+  }, 
+  {
+    name: "Miniature Pinscher",
     lifespan: "12 - 14 years",
     origin: "Germany",
     sizeMin: 25,
