@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import Item from "./Item";
 import { ContextFilter } from "./Main";
 import { ContextDog } from "./Navigation";
@@ -106,9 +106,6 @@ export default function Content(p) {
     });
   }
 
-
-
-
   // if there is no dog that matches the filter(content array is empthy) give a message
   if (content.length === 0) {
     return <div id="noResults">
@@ -118,7 +115,6 @@ export default function Content(p) {
       </p>
       {/* <button onClick={p.resetStatus} className="resetButton">Reset filters</button> */}
     </div>
-
   }
   // return the content array as list
   return <ul>{content}</ul>;

@@ -4,7 +4,6 @@ import { ContextDog } from "./Navigation";
 export default function CopyToClipboardButton() {
     const { dogNameOfDetailPage, setDogNameOfDetailPage } = useContext(ContextDog)
 
-
   const copyToClipboard = () => {
     const currentUrl = window.location.href;
     navigator.clipboard.writeText(currentUrl)
