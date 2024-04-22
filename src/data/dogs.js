@@ -383,5 +383,15 @@ export const Dogs = [
     fur_surface: "Smooth",
     imgUrl: "https://2.bp.blogspot.com/-9y6fbigzJfk/UQ4wLFX6kqI/AAAAAAAAAU4/1VM5nAOipAA/s1600/Walea+Yeunesse+Riva+Xanadou+v.K.B..jpg",
     fav: false,
+  },{
+    name:"Miniature Pinscher",
+    lifespan: "12 - 14 years",
+    origin: "Germany",
+    sizeMin: 25,
+    sizeMax: 30,
+    fur_length: "Short",
+    fur_surface: "Smooth",
+    imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/f/c/csm_Deutscher_Pinscher_Portrait_18f03f66d5.jpg",
+    fav: false,
   }
 ]
