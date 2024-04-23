@@ -9,7 +9,7 @@ export default function MultiRangeSlider({ }) {
     if (filterRangeMin > filterRangeMax || filterRangeMin == 100) {
         setfilterRangeMin(filterRangeMax)
     }
-    // with the power of ccs two sliders are created on top of each other (z value)
+    // with ccs two sliders are created on top of each other (z value)
     return (
         <div className="sliderSize">
             <div className="slider">

@@ -99,10 +99,8 @@ export default function Content(p) {
           filterFav={p.filterFav}
           setRenderTrigger={setRenderTrigger}
           renderTrigger={renderTrigger}
-
         />
       );
-
     });
   }
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, createContext } from 'react'
-import About from './About';
 import Main from './Main';
 import Header from './Header';
 
@@ -36,11 +35,6 @@ export default function Navigation() {
             setDogNameOfDetailPage(getDogName(currentPage))
         }
     }, [currentPage])
-
-    function navigateTo(page) {
-        window.history.pushState({}, '', page);
-        setCurrentPage(page)
-    };
 
     function linkToSites() {
         if (currentPage.includes('main/dog/')) {

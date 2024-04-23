@@ -6,7 +6,7 @@ import { Dogs } from './data/dogs'
 export const ContextFilter = createContext();
 
 export default function Main({Dog=''}) {
-  // usestates for clicking on or off buttons
+  // usestates for clicking filter buttons
   const [showShort, setshowShort] = useState(true);
   const [showMedium, setshowMedium] = useState(true);
   const [showLong, setshowLong] = useState(true);

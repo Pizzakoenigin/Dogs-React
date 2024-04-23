@@ -84,5 +84,3 @@ export default function Filter(p) {
     )
   }
 };
-
-// function handleclick gedöns in die button komponente übertragen?
