@@ -40,7 +40,7 @@ export const Dogs = [
     sizeMax: 61,
     fur_length: "Medium",
     fur_surface: "Smooth",
-    imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/1/1/csm_Golden_Retriever_Seitenportrait_ecf6462058.jpeg",
+    imgUrl: "https://images.ctfassets.net/m5ehn3s5t7ec/KtxCRW7y0LXNYcn6BHPPD/065b05bda2e516ea6a5887ce9856d1db/Golden_Retriever__Price.webp",
     fav: false,
   },
   {
@@ -117,7 +117,7 @@ export const Dogs = [
     sizeMax: 61,
     fur_length: "Short",
     fur_surface: "Smooth",
-    imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/a/f/csm_Dalmatiner_Seitenportrait_cc8eb2cff7.jpeg",
+    imgUrl: "https://www.zooplus.de/magazin/wp-content/uploads/2017/03/dalmatiner-hund.jpg",
     fav: false,
   },
   {
@@ -150,7 +150,7 @@ export const Dogs = [
     sizeMax: 28,
     fur_length: "Long",
     fur_surface: "Smooth",
-    imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/5/6/csm_Shih_Tzu_Portrait_64f22b4401.jpeg",
+    imgUrl: "http://fishsubsidy.org/wp-content/uploads/2020/01/shih-tzu-dog-breed.jpg",
     fav: false,
   },
   {
@@ -216,7 +216,7 @@ export const Dogs = [
     sizeMax: 38,
     fur_length: "Short",
     fur_surface: "Smooth",
-    imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/a/3/csm_Basset_Hound_Portrait_ebb3d0a09f.jpg",
+    imgUrl: "https://www.futterhaus.de/media/i/csm_Basset_Hound_Portrait_ebb3d0a09f-2697-2.jpg",
     fav: false,
   },
   {
@@ -238,7 +238,7 @@ export const Dogs = [
     sizeMax: 41,
     fur_length: "Long",
     fur_surface: "Smooth",
-    imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/4/4/csm_Shetland_Sheepdog_Portrait_f3bbc55d0d.jpg",
+    imgUrl: "https://www.zooplus.de/magazin/wp-content/uploads/2017/09/shetland-sheepdog.jpeg",
     fav: false,
   },
   {
@@ -304,7 +304,7 @@ export const Dogs = [
     sizeMax: 75,
     fur_length: "Medium",
     fur_surface: "Smooth",
-    imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/b/e/csm_Akita_Seitenportrait_f181952dd7.jpeg",
+    imgUrl: "https://www.futterhaus.de/media/i/csm_Akita_Seitenportrait_f181952dd7-2633-2.jpeg",
     fav: false,
   },
   {
@@ -392,7 +392,7 @@ export const Dogs = [
     sizeMax: 30,
     fur_length: "Short",
     fur_surface: "Smooth",
-    imgUrl: "https://www.futterhaus.de/fileadmin/_processed_/f/c/csm_Deutscher_Pinscher_Portrait_18f03f66d5.jpg",
+    imgUrl: "https://cdn.britannica.com/33/233233-050-BD461F52/miniature-pinscher-dog.jpg",
     fav: false,
   }
 ]
