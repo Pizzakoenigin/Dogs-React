@@ -31,6 +31,10 @@
         margin: 0 0 0.4rem 0.4rem;
       }
 
+      img {
+        height: 30vh;
+      }
+
       .dogFavButton {
         background: none;
         color: inherit;
